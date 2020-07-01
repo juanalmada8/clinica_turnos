@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'servicios',
     'turnos',
+    'consulta',
 ]
 
 MIDDLEWARE = [
