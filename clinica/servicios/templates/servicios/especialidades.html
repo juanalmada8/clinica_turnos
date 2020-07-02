@@ -18,15 +18,15 @@
 <section class="container ftco-section">
     <div class="row row-cols-1 row-cols-md-3">
         {% for i in servicio %}
-            <div class="col mb-4">
-                <div class="card h-100">
-                <img src="{{i.ruta_imagen}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{i.nombre}}</h5>
-                    <p class="card-text">{{i.descripcion}}</p>
-                </div>
-                </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+            <img src="{{i.ruta_imagen.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{i.nombre}}</h5>
+                <p class="card-text">{{i.descripcion}}</p>
             </div>
+            </div>
+        </div>
         {% endfor %}
     </div>
 </section>

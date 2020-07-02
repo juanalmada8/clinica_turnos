@@ -35,7 +35,10 @@
         </div>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
-                <form action="#">
+                <table>
+                {{ turno.as_table }}
+                </table>
+                {% comment %} <form action="#">
                     <div class="form-group">
                         <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
                         <input type="text" class="form-control" id="appointment_name" placeholder="Nombre y Apellido">
@@ -61,7 +64,7 @@
                     <div class="form-group">
                         <input type="submit" value="Enviar" class="btn btn-primary">
                     </div>
-                </form>
+                </form> {% endcomment %}
 
             </div>
 
