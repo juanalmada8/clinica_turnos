@@ -9,7 +9,8 @@
         <div class="container" data-scrollax-parent="true">
             <div class="row slider-text align-items-end">
                 <div class="col-md-7 col-sm-12 ftco-animate mb-5">
-                    <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Solicita un turno</h1>
+                    <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Solicita un turno
+                    </h1>
                 </div>
             </div>
         </div>
@@ -35,17 +36,52 @@
         </div>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
-                <table>
-                {{ turno.as_table }}
-                </table>
-                {% comment %} <form action="#">
+                {% if "OK" in request.GET %}
+                <script> alert('SE GENERO CORRECTAMENTE EL TURNO') </script>
+                {% endif %}
+                <!-- <form action="" method='POST'>
+                    {% csrf_token %}
+                    <table>
+                        {{ turno.as_table }}
+                    </table>
+                    <div class="form-group">
+                        <input type="submit" value="Enviar" class="btn btn-primary">
+                    </div>
+                </form> -->
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <!-- <label for="appointment_name" class="text-black">Nombre y Apellido</label> -->
+                        {{ turno.nombre }}
+                    </div>
                     <div class="form-group">
                         <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
-                        <input type="text" class="form-control" id="appointment_name" placeholder="Nombre y Apellido">
+                        <!-- <input type="text" class="form-control" id="appointment_name" placeholder="Obra Social"> -->
+                        {{ turno.obra_social }}
                     </div>
                     <div class="form-group">
                         <!-- <label for="appointment_email" class="text-black">Email</label> -->
-                        <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+                        <!-- <input type="email" class="form-control" id="appointment_email" placeholder="Email"> -->
+                        {{ turno.email }}
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+                        <!-- <input type="number" class="form-control" id="appointment_name" placeholder="Edad"> -->
+                        {{ turno.edad }}
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+                        <!-- <input type="number" class="form-control" id="appointment_name" placeholder="DNI"> -->
+                        {{ turno.dni }}
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+                        <!-- <input type="tel" class="form-control" id="appointment_name" placeholder="Telefono"> -->
+                        {{ turno.telefono }}
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+                        <!-- <input type="text" class="form-control" id="appointment_name" placeholder="Direccion"> -->
+                        {{ turno.direccion }}
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -56,7 +92,6 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <!-- <label for="appointment_time" class="text-black">Time</label> -->
                                 <input type="text" class="form-control appointment_time" placeholder="Hora">
                             </div>
                         </div>
@@ -64,12 +99,14 @@
                     <div class="form-group">
                         <input type="submit" value="Enviar" class="btn btn-primary">
                     </div>
-                </form> {% endcomment %}
-
+                </form>
             </div>
 
             <div class="col-md-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.2788216838567!2d-58.49302608501173!3d-35.768526727560754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9597f1174520c095%3A0xcd10de72385d8e7f!2sSoloeta%2C%20Gral.%20Belgrano%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1592512427146!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.2788216838567!2d-58.49302608501173!3d-35.768526727560754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9597f1174520c095%3A0xcd10de72385d8e7f!2sSoloeta%2C%20Gral.%20Belgrano%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1592512427146!5m2!1ses-419!2sar"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
             </div>
         </div>
     </div>
