@@ -19,8 +19,8 @@ class Especialidades(models.Model):
     descripcion = models.CharField(max_length=255)
     ruta_imagen = models.FileField(upload_to='fotos/%Y/%m/%d', default='defecto/defecto.jpg', blank=True, null=True)
     estado = models.CharField(max_length=10,choices=APROBACION_ESPECIALIDAD, default='Borrador')
-    fecha_create = models.DateTimeField('Fecha de creacion')
-    fecha_update = models.DateTimeField('Fecha de actualizacion')
+    fecha_create = models.DateTimeField(auto_now_add=True)
+    fecha_update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return ('<%s => %s: %s, %s>' % (self.__class__.__name__, self.nombre, self.descripcion, self.ruta_imagen))

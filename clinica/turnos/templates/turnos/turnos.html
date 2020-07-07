@@ -49,6 +49,7 @@
                     </div>
                 </form> -->
                 <form action="" method="POST">
+                    {% csrf_token %}
                     <div class="form-group">
                         <!-- <label for="appointment_name" class="text-black">Nombre y Apellido</label> -->
                         {{ turno.nombre }}

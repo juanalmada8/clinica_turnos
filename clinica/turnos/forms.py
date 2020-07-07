@@ -1,7 +1,9 @@
 from django import forms
+from .models import Turno
 
 
-class TurnosForm(forms.Form):
+
+class TurnosForm(forms.ModelForm):
 
     nombre = forms.CharField(label='Nombre y apellido',required=True, widget=forms.TextInput(
         attrs={'class':"form-control", 'placeholder': "Nombre"}))
@@ -17,6 +19,10 @@ class TurnosForm(forms.Form):
         attrs={'class':"form-control", 'placeholder': "Telefono"}))
     direccion = forms.CharField(label='Direccion',required=True, widget=forms.TextInput(
         attrs={'class':"form-control", 'placeholder': "Direccion"}))
+    
+    class Meta:
+        model = Turno
+        fields = ['nombre', 'obra_social', 'email','edad','dni','telefono', 'direccion']
 
 
 
