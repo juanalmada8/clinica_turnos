@@ -125,3 +125,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+# Email config
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '2aad5ee0aa7784'
+EMAIL_HOST_PASSWORD = '79c4408a3871f8'
+EMAIL_PORT = '2525'

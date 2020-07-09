@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import TurnosForm
 from django.urls import reverse
+from .models import Turno
 
-# Create your views here.
 def turnos(request):
+    lista_turno = Turno.objects.all()
     turno = TurnosForm()
     if request.method == 'POST':
         turno = TurnosForm(data=request.POST)
@@ -18,5 +19,8 @@ def turnos(request):
             # direccion = request.POST.get('direccion', '')
             return redirect(reverse('turnos')+"?OK")
 
-    return render(request, 'turnos/turnos.html', {'turno':turno})
+    return render(request, 'turnos/turnos.html', {'lista_turno':lista_turno,'turno':turno})
+
+
+
     
