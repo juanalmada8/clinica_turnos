@@ -20,7 +20,4 @@ def turnos(request):
             return redirect(reverse('turnos')+"?OK")
 
     return render(request, 'turnos/turnos.html', {'lista_turno':lista_turno,'turno':turno})
-
-
-
     
