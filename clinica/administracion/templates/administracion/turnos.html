@@ -1,0 +1,58 @@
+{% extends 'login/home.html' %}
+
+{% block contenido %}
+ <!-- Dropdown Card Example -->
+ <div class="card shadow ">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Turnos Solicitados</h6>
+      <div class="dropdown no-arrow">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-header">Dropdown Header:</div>
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+      {% if not turnos %}
+      <div class="alert alert-info">No existe Turnos Solicitados</div>
+      {% else %}
+      <table class="table table-striped table-hover" id="tablaturnos">
+        <thead>
+          <tr>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">OBRA SOCIAL</th>
+            <th scope="col">EDAD</th>
+            <th class= "all"scope="col">ACCIONES</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for item in turnos%}
+            <tr>
+                <th scope="row">{{item.nombre}}</th>
+                <td>{{item.obra_social}}</td>
+                <td>{{item.edad}}</td>
+                <td>
+                    <a href="#" class="btn btn-warning btn-circle" role="button"><i class="far fa-edit"></i></a>
+                    <a href="#" class="btn btn-danger btn-circle" role="button"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+          
+        </tbody>
+      </table>
+      {% endif %}
+    </div>
+  </div>
+{% endblock  %}
+
+{% block js_page %}
+{% endblock %}

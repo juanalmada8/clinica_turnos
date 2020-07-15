@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'turnos',
     'about',
     'galeria',
+    'login',
+    'administracion',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,10 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = '/media/'
+
+#Login Config
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 # Email config
 

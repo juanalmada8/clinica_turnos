@@ -24,5 +24,7 @@ urlpatterns = [
     path('turnos/', include('turnos.urls')),
     path('especialidades/', include('servicios.urls')),
     path('about/', include('about.urls')),
-    path('galeria/', include('galeria.urls'))
+    path('galeria/', include('galeria.urls')),
+    path('login/', include(('login.urls','login'), namespace='login')),
+    path('turnolista/', include(('administracion.urls','turnolista'), namespace='turnolista'))
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
