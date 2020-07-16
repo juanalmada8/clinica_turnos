@@ -20,4 +20,9 @@ def turnos(request):
             return redirect(reverse('turnos')+"?OK")
 
     return render(request, 'turnos/turnos.html', {'lista_turno':lista_turno,'turno':turno})
-    
+
+
+""" def fechaConsulta(request):
+    f_consultas = FechaConsulta.objects.all()
+    f_consulta = FechaConsulta()
+    return render(request, 'turnos/turnos.html', {'f_consulta':f_consulta}) """

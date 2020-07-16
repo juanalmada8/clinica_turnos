@@ -64,24 +64,20 @@
                         <!-- <input type="tel" class="form-control" id="appointment_name" placeholder="Telefono"> -->
                         {{ turno.telefono }}
                     </div>
+                    
                     <div class="form-group">
                         <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
                         <!-- <input type="text" class="form-control" id="appointment_name" placeholder="Direccion"> -->
                         {{ turno.direccion }}
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- <label for="appointment_date" class="text-black">Date</label> -->
-                                <input type="text" class="form-control appointment_date" placeholder="Fecha">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control appointment_time" placeholder="Hora">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="appointment_name" class="text-black">Fecha de Consulta</label>
+                        <!-- <input type="text" class="form-control" id="appointment_name" placeholder="Direccion"> -->
+                        {{ turno.fecha_consulta }}
                     </div>
+
+                    
+
                     <div class="form-group">
                         <input type="submit" value="Enviar" class="btn btn-primary">
                     </div>
@@ -98,6 +94,5 @@
     </div>
 </section>
 
-
-
 {% endblock %}
+

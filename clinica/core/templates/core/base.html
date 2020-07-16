@@ -59,9 +59,9 @@
           <li class="nav-item">
             <a href="{% url 'login:login' %}" class="nav-link">Reporte</a>
           </li>
-          <li class="nav-item cta">
+          <!-- <li class="nav-item cta">
             <a href="#" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Consultas</span></a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -69,7 +69,7 @@
   <!-- END nav -->
   {% if request.path != '/' %}
   <section class="home-slider owl-carousel">
-    <div class="slider-item bread-item" style="background-image: url('images/bg_1.jpg');"
+    <div class="slider-item bread-item" style="background-image: url('{% static 'core/images/banner5.jpg' %}');"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container" data-scrollax-parent="true">

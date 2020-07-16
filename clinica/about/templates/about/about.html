@@ -6,24 +6,25 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
-                <h2 class="mb-3">Meet Our Experience Dentist</h2>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
-                    is a paradisematic country, in which roasted parts of sentences</p>
+                <h2 class="mb-3">Un poco de mi trayectoria</h2>
+                <p>Introduccion...</p>
             </div>
         </div>
         <div class="row">
+            {% for i in sobremi %}
             <div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
                 <div class="staff">
-                    <div class="img mb-4" style="background-image: url(images/person_5.jpg);"></div>
+                    <div class="img mb-4" style="background-image: url({{i.ruta_imagen.url}});"></div>
                     <div class="info text-center">
-                        <h3><a href="teacher-single.html">Tom Smith</a></h3>
-                        <span class="position">Dentist</span>
+                        <h3><a href="#">{{i.titulo}}</a></h3>
+                        <span class="position">{{i.subtitulo}}</span>
                         <div class="text">
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia</p>
+                            <p>{{i.descripcion}}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>
